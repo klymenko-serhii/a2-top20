@@ -1,3 +1,5 @@
-<h1>
-  {{title}}
-</h1>
+<fl-navbar></fl-navbar>
+<router-outlet></router-outlet>
+<div *ngIf='loading' class="loading">
+  <md-spinner class='spinner' ></md-spinner>
+</div>

@@ -1,0 +1,6 @@
+<md-card>
+  <canvas *ngIf="pieChartLabels.length" baseChart width="400" height="400"
+    [data]="pieChartData"
+    [labels]="pieChartLabels"
+    [chartType]="pieChartType"></canvas>
+</md-card>

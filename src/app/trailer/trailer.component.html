@@ -1,0 +1,29 @@
+<md-dialog-content>
+  <h1 md-dialog-title >{{trailerTitle}}</h1>
+  <link rel="stylesheet" type="text/css" href="//cdn.traileraddict.com/css/rembed.css">
+  <div class="outer-embed-ta">
+    <iframe *ngIf="trailers[currentTrailer]"
+      width="100%"
+      [src]='trailerURL'
+      allowfullscreen="true"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      scrolling="no"
+      frameborder="0"
+      class="embed-ta"
+    ></iframe>
+  </div>
+</md-dialog-content>
+<md-dialog-actions>
+  <button
+    md-button
+    (click)='prevTrailer()'
+    [disabled]='currentTrailer === 0'
+  >prev</button>
+  <button
+    md-button
+    (click)='nextTrailer()'
+    [disabled]='currentTrailer === trailers.length - 1'
+  >next</button>
+  <button md-button md-dialog-close >close</button>
+</md-dialog-actions>

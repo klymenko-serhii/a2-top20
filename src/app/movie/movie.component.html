@@ -1,0 +1,35 @@
+<md-card class='movie' >
+  <md-card-title>{{ movie.title }} {{ movie.rating }}</md-card-title>
+  <md-card-subtitle>{{ movie.year }}</md-card-subtitle>
+  <img src='{{movie.poster}}' alt='poster' md-card-lg-image />
+  <div class="info">
+    <div>
+      Genres:
+      <ul>
+        <li *ngFor="let genre of movie.genres" >{{genre}}</li>
+      </ul>
+    </div>
+    <div>
+      Countries:
+      <ul>
+        <li *ngFor="let country of movie.countries" >{{country}}</li>
+      </ul>
+    </div>
+    <div>
+      Directors:
+      <ul>
+        <li *ngFor="let director of movie.directors" >
+          <a href="http://www.imdb.com/name/{{director.id}}" target="_blank">
+            {{director.name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button md-mini-fab class='play' (click)='openTrailer()'>
+    <md-icon>play_circle_filled</md-icon>
+  </button>
+  <button md-mini-fab [ngClass]="{'star-active': isFavorite, 'star': true}" (click)='toggleFavorite($event)'>
+    <md-icon>star_rate</md-icon>
+  </button>
+</md-card>
